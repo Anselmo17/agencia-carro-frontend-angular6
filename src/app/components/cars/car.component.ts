@@ -36,7 +36,7 @@ export class CarComponent implements OnInit {
     }
   }
 
-  // Chama o serviço para obtém todos os carros
+  // Chama o serviço para obter todos os carros
   getCars() {
     this.carService.getCars().subscribe((cars: Car[]) => {
       this.cars = cars;

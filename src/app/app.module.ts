@@ -9,12 +9,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { CarComponent } from './components/cars/car.component';
+import { CarFormComponent } from '../app/components/cars/car-form/car-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CarComponent
+    CarComponent,
+    CarFormComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,8 @@ import { CarComponent } from './components/cars/car.component';
   bootstrap: [
     AppComponent,
     HomeComponent,
-    CarComponent
+    CarComponent,
+    CarFormComponent
   ]
 })
 export class AppModule { }
