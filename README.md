@@ -1,6 +1,17 @@
+
 # AgenciaCarros
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.1.
+
+# Instalar dependencias
+instalar os pacotes
+
+# Rodar a aplicacao e o mock server
+npm start
+json-server --watch src/assets/data/db.json
+
+
+
 
 ## Development server
 
