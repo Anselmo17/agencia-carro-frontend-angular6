@@ -11,22 +11,15 @@ import { CarModule } from './components/cars/car.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
-//services
-//import { CarService } from './services/car.service';
 
 // components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-// import { CarComponent } from './components/cars/car.component';
-// import { CarFormComponent } from '../app/components/cars/car-form/car-form.component';
-
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    //CarComponent,
-    //CarFormComponent
   ],
   imports: [
     BrowserModule,
@@ -35,19 +28,13 @@ import { HomeComponent } from './components/home/home.component';
     CarModule,
     AppRoutingModule
 
-    //routing,
-    //carRouting
-    //AppRoutingModule
-
   ],
   providers: [
-    // CarService
+   
   ],
   bootstrap: [
     AppComponent,
-    HomeComponent,
-    //CarComponent,
-    //CarFormComponent
+    
   ]
 })
 export class AppModule { }

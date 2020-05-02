@@ -29,6 +29,12 @@
       "color": "Prata",
       "price": 3400,
       "id": 5
+    },
+    {
+      "model": "Onix",
+      "color": "Amarelo",
+      "price": 45,
+      "id": 6
     }
   ]
 }
