@@ -24,29 +24,31 @@ export class CarDetailsComponent implements OnInit {
   car = {} as Car;
   cars: Car[];
 
+
   title = 'Editar';
   subTitle = 'Gerenciamento de Carros';
 
   constructor(private carService: CarService, private routerParams: ActivatedRoute,
     private router: Router) { }
 
+
   ngOnInit() {
     this.getCars();
+
     this.inscricaoId = this.routerParams.params.subscribe((params: any) => {
       this.id = params['id'];
+      // filtra pelo id 
+      this.carService.getCarById(this.id).subscribe((car: Car) => {
+        this.car = car;
+      });
 
-      this.carService.getCarById(this.id);
-
-      if (this.id == null) {
-        this.router.navigate(['/cars']);
-      }
     });
-
-
 
   }
 
-
+  ngOnDestroy() {
+    this.inscricaoId.unsubscribe();
+  }
 
   // Chama o serviço para obter todos os carros
   getCars() {

@@ -7,6 +7,7 @@ import { retry, catchError } from 'rxjs/operators';
 
 //models
 import { Car } from '../models/car';
+import { stringify } from 'querystring';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,7 @@ import { Car } from '../models/car';
 
 export class CarService {
 
+  // url busca no servidor 
   url = 'http://localhost:3000/cars';
 
 
@@ -32,9 +34,8 @@ export class CarService {
         catchError(this.handleError))
   }
 
-
   // Obtem um carro pelo id
-  getCarById(id: number): Observable<Car> {
+  getCarById(id: number) {
     return this.httpClient.get<Car>(this.url + '/' + id)
       .pipe(
         retry(2),
@@ -42,33 +43,33 @@ export class CarService {
       )
   }
 
-// salva um carro
-saveCar(car: Car): Observable<Car> {
-  return this.httpClient.post<Car>(this.url, JSON.stringify(car), this.options)
-    .pipe(
-      retry(2),
-      catchError(this.handleError)
-    )
-}
+  // salva um carro
+  saveCar(car: Car): Observable<Car> {
+    return this.httpClient.post<Car>(this.url, JSON.stringify(car), this.options)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
 
 
- // utualiza um carro
- updateCar(car: Car): Observable<Car> {
-  return this.httpClient.put<Car>(this.url + '/' + car.id, JSON.stringify(car), this.options)
-    .pipe(
-      retry(1),
-      catchError(this.handleError)
-    )
-}
+  // utualiza um carro
+  updateCar(car: Car): Observable<Car> {
+    return this.httpClient.put<Car>(this.url + '/' + car.id, JSON.stringify(car), this.options)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
 
-// deleta um carro
-deleteCar(car: Car) {
-  return this.httpClient.delete<Car>(this.url + '/' + car.id, this.options)
-    .pipe(
-      retry(1),
-      catchError(this.handleError)
-    )
-}
+  // deleta um carro
+  deleteCar(car: Car) {
+    return this.httpClient.delete<Car>(this.url + '/' + car.id, this.options)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
 
   // Manipulação de erros
   handleError(error: HttpErrorResponse) {
