@@ -1,4 +1,3 @@
-
 <!-- TABELA -->
 <div class="container">
   <div class="card list-car">
@@ -14,7 +13,7 @@
             <th scope="col">Ações</th>
           </tr>
         </thead>
-        
+
         <tbody *ngIf="cars; else Msg">
           <tr *ngFor="let car of cars">
             <td>{{car.id}}</td>
@@ -22,7 +21,7 @@
             <td>{{car.color}}</td>
             <td>{{car.price | currency}}</td>
             <td>
-              <button type="button" class="btn btn-warning btn-sm" (click)="editCar(car)">Editar</button>
+              <button type="button" class="btn btn-warning btn-sm" (click)="editCar(car)" routerLink="cadastrar" >Editar</button>
               <button type="button" class="btn btn-danger btn-sm ml-1" (click)="deleteCar(car)">Deletar</button>
             </td>
           </tr>
@@ -35,9 +34,14 @@
     </div>
   </div>
 
+  <div class="container bg-dark">
+    <div class="card-body">
+      <a class="nav-link" class="btn btn-primary" routerLink="cadastrar">Cadastrar</a>
+    </div>
+  </div>
 
   <!-- FORMULARIO DE CADASTRO -->
-  <div class="card add-car">
+  <!-- <div class="card add-car">
     <h5 class="card-header">Adicionar/Atualizar carro</h5>
     <div class="card-body">
       <form id="add-form" (ngSubmit)="f.form.valid && saveCar(f)" #f="ngForm" novalidate>
@@ -70,8 +74,8 @@
         <button type="submit" class="btn btn-primary btn-add-car">Salvar</button>
         <button type="reset" class="btn btn-secondary btn-add-car" (click)="cleanForm(f)">Cancelar</button>
       </form>
-    </div>
-  
+    </div> -->
+
 </div>
 
 

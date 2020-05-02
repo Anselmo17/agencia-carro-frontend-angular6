@@ -23,6 +23,12 @@
       "color": "Vermelho",
       "price": 900,
       "id": 4
+    },
+    {
+      "model": "Belina",
+      "color": "Prata",
+      "price": 3400,
+      "id": 5
     }
   ]
 }
