@@ -1,0 +1,11 @@
+.bordCard {
+  border: 2px solid black;
+}
+
+.imgCard{
+  margin-top: 0.5rem;
+}
+
+.add-car {
+  margin-bottom: .5px;
+}
