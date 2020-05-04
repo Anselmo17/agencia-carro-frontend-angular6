@@ -35,6 +35,18 @@
       "color": "Amarelo",
       "price": 45,
       "id": 6
+    },
+    {
+      "model": "Corsa",
+      "color": "vinho",
+      "price": 13000,
+      "id": 7
+    },
+    {
+      "model": "scort",
+      "color": "verde",
+      "price": 5000,
+      "id": 8
     }
   ]
 }

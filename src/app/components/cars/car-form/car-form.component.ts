@@ -19,6 +19,7 @@ import { Subscription } from 'rxjs';
 })
 export class CarFormComponent implements OnInit {
 
+  mensagem: string;
 
   car = {} as Car;
   cars: Car[];
@@ -31,6 +32,7 @@ export class CarFormComponent implements OnInit {
   // quando o component inicia
   ngOnInit() {
     this.getCars();
+  
     this.inscricaoId = this.routerParams.params.subscribe((params: any) => {
       this.id = params['id'];
     });
@@ -42,15 +44,22 @@ export class CarFormComponent implements OnInit {
     this.inscricaoId.unsubscribe();
   }
 
-  // defini se um carro será criado ou atualizado
   saveCar(form: NgForm) {
+
+// defini se um carro será criado ou atualizado
     if (this.car.id !== undefined) {
       this.carService.updateCar(this.car).subscribe(() => {
         this.cleanForm(form);
       });
     } else {
       this.carService.saveCar(this.car).subscribe(() => {
+        this.mensagem = "Cadastro com sucesso !!!"
         this.cleanForm(form);
+
+        // limpa msg sucesso
+        setTimeout(() => {
+          this.mensagem = undefined;
+        }, 3000)
       });
     }
   }

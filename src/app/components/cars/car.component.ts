@@ -50,11 +50,6 @@ export class CarComponent implements OnInit {
     });
   }
 
-  // copia o carro para ser editado.
-  editCar(car: Car) {
-    this.car = { ...car };
-  }
-
   // limpa o formulario
   cleanForm(form: NgForm) {
     this.getCars();

@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 # Instalar dependencias
 instalar os pacotes
 
-# Rodar a aplicacao e o mock server
+# Rodar o mock server
 npm start
 json-server --watch src/assets/data/db.json
 

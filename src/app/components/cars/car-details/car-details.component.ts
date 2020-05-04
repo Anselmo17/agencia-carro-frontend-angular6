@@ -37,6 +37,7 @@ export class CarDetailsComponent implements OnInit {
 
     this.inscricaoId = this.routerParams.params.subscribe((params: any) => {
       this.id = params['id'];
+
       // filtra pelo id 
       this.carService.getCarById(this.id).subscribe((car: Car) => {
         this.car = car;
@@ -66,7 +67,7 @@ export class CarDetailsComponent implements OnInit {
   cleanForm(form: NgForm) {
     this.getCars();
     form.resetForm();
-    //car = {} as Car;
+    this.car = {} as Car;
   }
 
 }
