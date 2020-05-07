@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 // components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HomeComponent } from './components/home/home.component';
     HttpClientModule,
     FormsModule,
     CarModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ButtonsModule.forRoot()
 
   ],
   providers: [

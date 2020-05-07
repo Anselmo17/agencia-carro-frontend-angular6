@@ -1,11 +1,8 @@
 {
+  "profile": {
+    "name": "typicode"
+  },
   "cars": [
-    {
-      "id": 1,
-      "model": "BMW X7",
-      "color": "Azul",
-      "price": 455.95
-    },
     {
       "id": 2,
       "model": "Mercedes benz c180",
@@ -47,6 +44,12 @@
       "color": "verde",
       "price": 5000,
       "id": 8
+    },
+    {
+      "model": "teste 3333",
+      "color": "Amarelo",
+      "price": 999999999999,
+      "id": 9
     }
   ]
 }
