@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 //import { carRouting, AppRoutingModule} from '../app/components/cars/car.routing';
 import { AppRoutingModule } from './app.routing.module';
 import { CarModule } from './components/cars/car.module';
+import { FuncionarioModule } from './components/funcionarios/funcionarios.module';
 
 // commons
 import { HttpClientModule } from '@angular/common/http';
@@ -27,16 +28,17 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
     HttpClientModule,
     FormsModule,
     CarModule,
+    FuncionarioModule,
     AppRoutingModule,
     ButtonsModule.forRoot()
 
   ],
   providers: [
-   
+
   ],
   bootstrap: [
     AppComponent,
-    
+
   ]
 })
 export class AppModule { }

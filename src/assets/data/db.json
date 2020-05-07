@@ -1,7 +1,4 @@
 {
-  "profile": {
-    "name": "typicode"
-  },
   "cars": [
     {
       "id": 2,
@@ -44,12 +41,22 @@
       "color": "verde",
       "price": 5000,
       "id": 8
+    }
+  ],
+  "profiles": [
+    {
+      "id": 1,
+      "nome": "Joao Pereira Silva",
+      "funcao": "administrador",
+      "aniver": "26/10/74",
+      "salario": 3.4
     },
     {
-      "model": "teste 3333",
-      "color": "Amarelo",
-      "price": 999999999999,
-      "id": 9
+      "id": 2,
+      "nome": "Maria Silva Nunes",
+      "funcao": "Gerente",
+      "aniver": "09/03/86",
+      "salario": 3.4
     }
   ]
 }
