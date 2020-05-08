@@ -1,6 +1,6 @@
 export interface Funcionario {
   id: number;
-  name: string;
+  nome: string;
   funcao: string;
   birthday: Date;
   salary: number;

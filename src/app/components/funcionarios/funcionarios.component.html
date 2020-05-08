@@ -1,3 +1,51 @@
-<p>
-  Tela de funcionarios 
-</p>
+<!-- TABELA -->
+<div class="container">
+  <div class="card list-car">
+    <h5 class="card-header">{{subTitle}}</h5>
+    <div class="card-body">
+      <table class="table">
+        <thead class="bg-dark tableCar">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Função</th>
+            <th scope="col">Salario</th>
+            <th scope="col">Aniversário</th>
+            <th scope="col">Ação</th>
+          </tr>
+        </thead>
+
+        <tbody *ngIf="funcionario; else Msg">
+          <tr *ngFor="let funcionario of funcionarios">
+            <td>{{funcionario.id}}</td>
+            <td>{{funcionario.name}}</td>
+            <td>{{funcionario.funcao}}</td>
+            <td>{{funcionario.salary | currency}}</td>
+            <td>{{funcionario.birthday}}</td>
+            <td>
+              <button type="button" class="btn btn-warning btn-sm" (click)="editCar(funcionario)"
+                [routerLink]="['details', funcionario.id]">Editar</button>
+              <button type="button" class="btn btn-danger btn-sm ml-1" >Deletar</button> 
+            </td>
+          </tr>
+        </tbody>
+
+        <ng-template class="notData" #Msg>
+          Nao tem dados para ser apresentando
+        </ng-template>
+      </table>
+    </div>
+  </div>
+
+  <div class="container bg-dark">
+    <div class="card-body">
+      <a class="nav-link" class="btn btn-primary" [routerLink]="['cadastrar']">Cadastrar</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- 
+<div class="container">
+  <router-outlet></router-outlet>
+</div> -->

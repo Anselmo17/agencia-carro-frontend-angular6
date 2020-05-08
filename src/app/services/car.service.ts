@@ -19,7 +19,7 @@ export class CarService {
   url = 'http://localhost:3000/cars';
 
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   // opcoes no header
   options = {
@@ -28,7 +28,7 @@ export class CarService {
 
   // obtem todos carros
   getCars(): Observable<Car[]> {
-    return this.httpClient.get<Car[]>(this.url)
+    return this.http.get<Car[]>(this.url)
       .pipe(
         retry(2),
         catchError(this.handleError))
@@ -36,7 +36,7 @@ export class CarService {
 
   // Obtem um carro pelo id
   getCarById(id: number) {
-    return this.httpClient.get<Car>(this.url + '/' + id)
+    return this.http.get<Car>(this.url + '/' + id)
       .pipe(
         retry(2),
         catchError(this.handleError)
@@ -45,7 +45,7 @@ export class CarService {
 
   // salva um carro
   saveCar(car: Car): Observable<Car> {
-    return this.httpClient.post<Car>(this.url, JSON.stringify(car), this.options)
+    return this.http.post<Car>(this.url, JSON.stringify(car), this.options)
       .pipe(
         retry(2),
         catchError(this.handleError)
@@ -55,7 +55,7 @@ export class CarService {
 
   // atualiza um carro
   updateCar(car: Car): Observable<Car> {
-    return this.httpClient.put<Car>(this.url + '/' + car.id, JSON.stringify(car), this.options)
+    return this.http.put<Car>(this.url + '/' + car.id, JSON.stringify(car), this.options)
       .pipe(
         retry(1),
         catchError(this.handleError)
@@ -64,7 +64,7 @@ export class CarService {
 
   // deleta um carro
   deleteCar(car: Car) {
-    return this.httpClient.delete<Car>(this.url + '/' + car.id, this.options)
+    return this.http.delete<Car>(this.url + '/' + car.id, this.options)
       .pipe(
         retry(1),
         catchError(this.handleError)
