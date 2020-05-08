@@ -39,6 +39,6 @@ export class FuncionariosComponent implements OnInit {
   cleanForm(form: NgForm) {
     this.getFuncionarios();
     form.resetForm();
-    //this.funcionario = {} as Funcionario;
+    this.funcionario = {} as Funcionario;
   }
 }

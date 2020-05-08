@@ -60,7 +60,7 @@ export class FuncionarioService {
 
 
   // atualiza um carro
-  updateCar(funcionario: Funcionario): Observable<Funcionario> {
+  updateFuncionario(funcionario: Funcionario): Observable<Funcionario> {
     return this.http.put<Funcionario>(this.url + '/' + funcionario.id, JSON.stringify(funcionario), 
     this.options)
       .pipe(
@@ -70,7 +70,7 @@ export class FuncionarioService {
   }
 
   // deleta um carro
-  deleteCar(funcionario: Funcionario) {
+  deleteFuncionario(funcionario: Funcionario) {
     return this.http.delete<Funcionario>(this.url + '/' + funcionario.id, this.options)
       .pipe(
         retry(1),
