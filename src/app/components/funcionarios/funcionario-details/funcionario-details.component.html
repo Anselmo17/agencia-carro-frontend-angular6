@@ -6,7 +6,7 @@
       <form id="add-form" (ngSubmit)="f.form.valid" #f="ngForm" novalidate>
         <div class="form-group">
           <label for="model">Modelo</label>
-          <input type="text" [(ngModel)]="car.model" id="model" name="model" #model="ngModel" required
+          <input type="text" [(ngModel)]="funcionario.nome" id="model" name="model" #model="ngModel" required
             class="form-control" [ngClass]="{ 'is-invalid': f.submitted && model.invalid }"
             placeholder="Digite o modelo">
           <div *ngIf="f.submitted && model.invalid" class="invalid-feedback">
@@ -15,7 +15,7 @@
         </div>
         <div class="form-group">
           <label for="color">Cor</label>
-          <input type="text" [(ngModel)]="car.color" id="color" name="color" #color="ngModel" required
+          <input type="text" [(ngModel)]="funcionario.nome" id="color" name="color" #color="ngModel" required
             class="form-control" [ngClass]="{ 'is-invalid': f.submitted && color.invalid }" placeholder="Digite a cor">
           <div *ngIf="f.submitted && color.invalid" class="invalid-feedback">
             <div *ngIf="color.errors.required">Cor é obrigatória</div>
@@ -23,7 +23,7 @@
         </div>
         <div class="form-group">
           <label for="price">Preço</label>
-          <input type="number" [(ngModel)]="car.price" id="price" name="price" #price="ngModel" required
+          <input type="number" [(ngModel)]="funcionario.nome" id="price" name="price" #price="ngModel" required
             class="form-control" [ngClass]="{ 'is-invalid': f.submitted && price.invalid }"
             placeholder="Digite o preço">
           <div *ngIf="f.submitted && price.invalid" class="invalid-feedback">

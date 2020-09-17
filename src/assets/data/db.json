@@ -35,28 +35,22 @@
       "color": "vinho",
       "price": 13000,
       "id": 7
-    },
-    {
-      "model": "scort",
-      "color": "verde",
-      "price": 5000,
-      "id": 8
     }
   ],
   "profiles": [
     {
       "id": 1,
-      "name": "Joao Pereira Silva",
+      "nome": "Joao Pereira Silva",
       "funcao": "administrador",
-      "birthday": "26/10/74",
-      "salary": 3.4
+      "birthday": "10/10/1974 00:00:00",
+      "salary": 3900.00
     },
     {
       "id": 2,
-      "name": "Maria Silva Nunes",
+      "nome": "Maria Silva Nunes",
       "funcao": "Gerente",
-      "birthday": "09/03/86",
-      "salary": 3.4
+      "birthday": "03/09/1986 00:00:00",
+      "salary": 3400.00
     }
   ]
 }

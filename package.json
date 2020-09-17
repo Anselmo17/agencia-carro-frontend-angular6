@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open",
+    "mockApi":"json-server --watch src/assets/data/db.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

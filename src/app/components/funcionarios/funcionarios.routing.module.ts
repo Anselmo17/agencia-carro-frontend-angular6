@@ -3,12 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 
 // components 
 import { FuncionariosComponent } from './funcionarios.component';
+import {FuncionarioFormComponent} from './funcionario-form/funcionario-form.component';
+import { FuncionarioDetailsComponent } from './funcionario-details/funcionario-details.component';
 
 // caminhos para definir rotas aplicacao
 const appRouters: Routes = [
   { path: 'funcionarios', component: FuncionariosComponent },
-  { path: 'funcionarios/cadastrar', component: FuncionariosComponent },
-  { path: 'funcionarios/details/:id', component: FuncionariosComponent }
+  { path: 'funcionarios/cadastrar', component: FuncionarioFormComponent },
+  { path: 'funcionarios/details/:id', component: FuncionarioDetailsComponent }
 ];
 
 

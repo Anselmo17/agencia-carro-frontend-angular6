@@ -7,6 +7,8 @@ import { FuncionariosRoutingModule } from './funcionarios.routing.module';
 
 //components
 import { FuncionariosComponent } from '../funcionarios/funcionarios.component';
+import {FuncionarioFormComponent} from './funcionario-form/funcionario-form.component';
+import {FuncionarioDetailsComponent } from './funcionario-details/funcionario-details.component';
 
 // services
 import { FuncionarioService } from '../../services/funcionario.service';
@@ -21,7 +23,9 @@ import { FuncionarioService } from '../../services/funcionario.service';
   ],
   exports: [],
   declarations: [
-    FuncionariosComponent
+    FuncionariosComponent,
+    FuncionarioFormComponent,
+    FuncionarioDetailsComponent
   ],
   providers: [
     FuncionarioService

@@ -18,12 +18,12 @@
         <tbody *ngIf="funcionario; else Msg">
           <tr *ngFor="let funcionario of funcionarios">
             <td>{{funcionario.id}}</td>
-            <td>{{funcionario.name}}</td>
-            <td>{{funcionario.funcao}}</td>
-            <td>{{funcionario.salary | currency}}</td>
-            <td>{{funcionario.birthday}}</td>
+            <td>{{funcionario.nome}}</td>
+            <td>{{funcionario.funcao | uppercase}}</td>
+            <td>{{funcionario.salary | currency:"BRL": true }}</td>
+            <td>{{funcionario.birthday | date:"dd/MM/yyyy"}}</td>
             <td>
-              <button type="button" class="btn btn-warning btn-sm" (click)="editCar(funcionario)"
+              <button type="button" class="btn btn-warning btn-sm"
                 [routerLink]="['details', funcionario.id]">Editar</button>
               <button type="button" class="btn btn-danger btn-sm ml-1" >Deletar</button> 
             </td>
