@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
-import { FuncionarioModule } from './funcionarios.module';
 
 // Service
 import { FuncionarioService } from '../../services/funcionario.service';
@@ -16,14 +15,17 @@ import { Funcionario } from '../../models/funcionario';
   templateUrl: './funcionarios.component.html',
   styleUrls: ['./funcionarios.component.css']
 })
+
+
+
 export class FuncionariosComponent implements OnInit {
 
   
   funcionario = {} as Funcionario;
   funcionarios: Funcionario[];
 
-  title = 'Funcionarios';
-  subTitle = 'Gerenciamento de Funcionarios';
+  title = 'Funcionários';
+  subTitle = 'Gerenciamento de Funcionários';
 
   id: string;
   inscricaoId: Subscription;
@@ -79,6 +81,14 @@ saveCar(form: NgForm) {
       ...funcionario
     }
   };
+
+   // deleta um carro
+   deleteFuncionario(funcionario: Funcionario) {
+    this.funcionarioService.deleteFuncionario(funcionario).subscribe(() => {
+      this.getFuncionarios();
+    });
+  }
+
 
   // limpa o formulario
   cleanForm(form: NgForm) {

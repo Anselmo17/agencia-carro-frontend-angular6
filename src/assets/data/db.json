@@ -13,12 +13,6 @@
       "price": 377.38
     },
     {
-      "model": "Monza ",
-      "color": "Vermelho",
-      "price": 900,
-      "id": 4
-    },
-    {
       "model": "Belina",
       "color": "Prata",
       "price": 3400,
@@ -43,14 +37,21 @@
       "nome": "Joao Pereira Silva",
       "funcao": "administrador",
       "birthday": "10/10/1974 00:00:00",
-      "salary": 3900.00
+      "salary": 3900
     },
     {
       "id": 2,
       "nome": "Maria Silva Nunes",
       "funcao": "Gerente",
       "birthday": "03/09/1986 00:00:00",
-      "salary": 3400.00
+      "salary": 3400
+    },
+    {
+      "id": 3,
+      "nome": "Marciano Caldeira Lima",
+      "funcao": "Ajudante",
+      "birthday": "10/02/1970 00:00:00",
+      "salary": 2400
     }
   ]
 }

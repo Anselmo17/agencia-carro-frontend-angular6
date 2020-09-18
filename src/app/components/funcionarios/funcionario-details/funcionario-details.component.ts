@@ -40,6 +40,8 @@ export class FuncionarioDetailsComponent implements OnInit {
     // busca todos os funcionarios 
     this.getFuncionarios();
     
+
+    // busca o dados e devolve na tela 
     this.inscricaoId = this.routerParams.params.subscribe((params: any) => {
       this.id = params['id'];
       this.editavel = params['editar'] === "true" ? true : false;
