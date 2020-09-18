@@ -7,7 +7,10 @@ import { HomeComponent } from './components/home/home.component';
 
 // caminhos para definir rotas aplicacao
 const appRouters: Routes = [
-  { path: '', component: HomeComponent }
+  { path: '', component: HomeComponent },
+
+  // senao existe rota redireciona para home 
+  { path: '**', redirectTo:'',  pathMatch: "full" }
 ];
 
 

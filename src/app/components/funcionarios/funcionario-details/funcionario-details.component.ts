@@ -25,7 +25,7 @@ export class FuncionarioDetailsComponent implements OnInit {
   funcionarios: Funcionario[];
 
 
-  title = 'Editar';
+  title = 'Editar dados';
   subTitle = 'Gerenciamento de Carros';
 
   constructor(private funcionarioService: FuncionarioService, private routerParams: ActivatedRoute,
@@ -34,7 +34,7 @@ export class FuncionarioDetailsComponent implements OnInit {
 
   ngOnInit() {
 
-    // bus
+    // busca todos os funcionarios 
     this.getFuncionarios();
 
     this.inscricaoId = this.routerParams.params.subscribe((params: any) => {
@@ -59,6 +59,7 @@ export class FuncionarioDetailsComponent implements OnInit {
       this.funcionarios = funcionarios;
     });
   }
+
 
   // copia o carro para ser editado.
   editFuncionario(funcionario: Funcionario) {
