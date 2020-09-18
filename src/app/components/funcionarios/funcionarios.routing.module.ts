@@ -10,7 +10,8 @@ import { FuncionarioDetailsComponent } from './funcionario-details/funcionario-d
 const appRouters: Routes = [
   { path: 'funcionarios', component: FuncionariosComponent },
   { path: 'funcionarios/cadastrar', component: FuncionarioFormComponent },
-  { path: 'funcionarios/details/:id', component: FuncionarioDetailsComponent }
+  { path: 'funcionarios/details/:id/:editar', component: FuncionarioDetailsComponent },
+  { path: 'funcionarios/editar/:id/:editar', component: FuncionarioDetailsComponent }
 ];
 
 
