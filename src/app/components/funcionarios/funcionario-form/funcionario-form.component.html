@@ -36,6 +36,14 @@
           <div *ngIf="price.errors.required">Preço é obrigatório</div>
         </div>
       </div>
+      <div class="form-group">
+        <label for="price">Data Aniversário : </label>
+        <input type="number" [(ngModel)]="funcionario.birthday" id="birthday" name="birthday" #price="ngModel" required
+          class="form-control" [ngClass]="{ 'is-invalid': f.submitted && price.invalid }" placeholder="Digite data Nascimento">
+        <div *ngIf="f.submitted && price.invalid" class="invalid-feedback">
+          <div *ngIf="price.errors.required">Data Nascimento é obrigatório</div>
+        </div>
+      </div>
       <button type="submit" class="btn btn-primary btn-add-car">Salvar</button>
       <button type="reset" class="btn btn-secondary btn-add-car ml-1" (click)="cleanForm(f)">Cancelar</button>
       <button type="button" class="btn btn-dark btn-add-car ml-1" [routerLink]="['/funcionarios']">Voltar</button>

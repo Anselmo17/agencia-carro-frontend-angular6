@@ -37,7 +37,7 @@
       "nome": "Maria Silva Nunes",
       "funcao": "Gerente",
       "birthday": "03/09/1986 00:00:00",
-      "salary": 3400
+      "salary": 3000
     },
     {
       "id": 3,
@@ -45,6 +45,12 @@
       "funcao": "Ajudante",
       "birthday": "10/02/1970 00:00:00",
       "salary": 2400
+    },
+    {
+      "nome": "Claudio Monteiro Lima",
+      "funcao": "Desenvolvedor",
+      "salary": 4500,
+      "id": 4
     }
   ]
 }

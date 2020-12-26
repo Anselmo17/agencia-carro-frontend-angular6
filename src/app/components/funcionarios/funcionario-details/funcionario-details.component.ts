@@ -47,6 +47,8 @@ export class FuncionarioDetailsComponent implements OnInit {
       this.id = params['id'];
       this.editavel = params['editar'] === "true" ? true : false;
 
+
+      // todo loading
       if(this.editavel){
         this.title = "Editar os dados";
         this.enable = true;
@@ -74,17 +76,20 @@ export class FuncionarioDetailsComponent implements OnInit {
     });
   }
 
-
   // copia o carro para ser editado.
   editFuncionario(funcionario: Funcionario) {
     this.funcionario = { ...funcionario };
+    this.funcionarioService.updateFuncionario(this.funcionario).subscribe(() => {
+      console.log('atualizado com sucesso=================!')
+      this.cleanForm();
+    });
   }
 
   // limpa o formulario
-  cleanForm(form: NgForm) {
-    this.getFuncionarios();
-    form.resetForm();
+  cleanForm() {
     this.funcionario = {} as Funcionario;
+    this.getFuncionarios();
+    this.router.navigate(['/funcionarios']);
   }
 
 }
