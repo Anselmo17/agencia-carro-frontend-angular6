@@ -22,7 +22,8 @@ export class FuncionarioDetailsComponent implements OnInit {
   id: number;
   inscricaoId: Subscription;
   editavel: boolean = false;
-  
+  enable:boolean= false;
+
   //tipo funcionario
   funcionario = {} as Funcionario;
   funcionarios: Funcionario[];
@@ -48,6 +49,9 @@ export class FuncionarioDetailsComponent implements OnInit {
 
       if(this.editavel){
         this.title = "Editar os dados";
+        this.enable = true;
+      }else{
+        this.enable = false;
       }
 
       // filtra pelo id 

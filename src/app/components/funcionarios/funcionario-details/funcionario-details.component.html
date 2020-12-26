@@ -33,7 +33,7 @@
             <div *ngIf="price.errors.required">Preço é obrigatório</div>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary btn-add-car">Salvar</button>
+        <button *ngIf="enable" type="submit" class="btn btn-primary btn-add-car" [disabled]="!enable">Salvar</button>
         <button class="btn btn-secondary ml-1 btn-add-car" routerLink="/funcionarios" >Voltar</button>
       </form>
     </div> 
