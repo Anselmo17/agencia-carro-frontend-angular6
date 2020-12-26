@@ -14,7 +14,6 @@ const appRouters: Routes = [
   { path: 'funcionarios/editar/:id/:editar', component: FuncionarioDetailsComponent }
 ];
 
-
 // adiciona as rotas a modulo
 @NgModule({
   imports: [

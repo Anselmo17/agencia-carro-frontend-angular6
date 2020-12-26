@@ -33,13 +33,6 @@
   ],
   "profiles": [
     {
-      "id": 1,
-      "nome": "Joao Pereira Silva",
-      "funcao": "administrador",
-      "birthday": "10/10/1974 00:00:00",
-      "salary": 3900
-    },
-    {
       "id": 2,
       "nome": "Maria Silva Nunes",
       "funcao": "Gerente",
