@@ -22,8 +22,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="price">
-              Salário :
+            <label for="price">Salário :
             </label>
             <input type="number" [(ngModel)]="funcionario.salary" id="price" name="price" #price="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && price.invalid }" placeholder="Digite o salario">
               <div *ngIf="f.submitted && price.invalid" class="invalid-feedback">
@@ -33,7 +32,7 @@
             <div class="form-group">
               <label for="birthday">Data Aniversário :
               </label>
-              <input type="text" [(ngModel)]="funcionario.birthday" id="birthday" name="birthday" (keyup)="maskaraData()" 
+              <input type="date" [(ngModel)]="funcionario.birthday" id="birthday" name="birthday" (keyup)="maskaraData()" 
                  #birthday="ngModel" required maxlength="8" class="form-control" [ngClass]="{ 'is-invalid': f.submitted && birthday.invalid }" placeholder="Digite data Nascimento">
                 <div *ngIf="f.submitted && birthday.invalid" class="invalid-feedback">
                   <div *ngIf="birthday.errors.required">Data Nascimento é obrigatório</div>

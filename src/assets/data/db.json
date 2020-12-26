@@ -36,14 +36,14 @@
       "id": 2,
       "nome": "Maria Silva Nunes",
       "funcao": "Gerente",
-      "birthday": "03/09/1986 00:00:00",
+      "birthday": "2014-01-01",
       "salary": 3000
     },
     {
       "id": 3,
       "nome": "Marciano Caldeira Lima",
       "funcao": "Ajudante",
-      "birthday": "10/02/1970 00:00:00",
+      "birthday": "1999-07-26",
       "salary": 2400
     },
     {
