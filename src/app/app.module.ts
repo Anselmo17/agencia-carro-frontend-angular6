@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+// import { NgxMaskModule } from 'ngx-mask';
 
 // routers
 //import { carRouting, AppRoutingModule} from '../app/components/cars/car.routing';
@@ -30,7 +30,9 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
     CarModule,
     FuncionarioModule,
     AppRoutingModule,
-    ButtonsModule.forRoot()
+    ButtonsModule.forRoot(),
+    // todo corrigir a maskara de dados
+    // NgxMaskModule.forRoot()
 
   ],
   providers: [

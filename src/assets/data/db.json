@@ -50,7 +50,8 @@
       "nome": "Claudio Monteiro Lima",
       "funcao": "Desenvolvedor",
       "salary": 4500,
-      "id": 4
+      "id": 4,
+      "birthday": "12/03/1986"
     }
   ]
 }

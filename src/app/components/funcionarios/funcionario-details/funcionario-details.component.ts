@@ -79,8 +79,8 @@ export class FuncionarioDetailsComponent implements OnInit {
   // copia o carro para ser editado.
   editFuncionario(funcionario: Funcionario) {
     this.funcionario = { ...funcionario };
-    this.funcionarioService.updateFuncionario(this.funcionario).subscribe(() => {
-      console.log('atualizado com sucesso=================!')
+    this.funcionarioService.updateFuncionario(this.funcionario).subscribe((data) => {
+      console.log('atualizado com sucesso=================!', data);
       this.cleanForm();
     });
   }
@@ -92,4 +92,17 @@ export class FuncionarioDetailsComponent implements OnInit {
     this.router.navigate(['/funcionarios']);
   }
 
+  maskaraData(){
+    const data = this.funcionario.birthday;
+    // yy/yy/yyyy
+    let dia,mes,ano;
+    if (data.length === 8) {
+      dia = data.substring(0, 2);
+      mes = data.substring(2, 4);
+      ano = data.substring(4, 8);
+      
+    const dataFormatada = `${dia}/${mes}/${ano}`;
+      this.funcionario.birthday = dataFormatada;
+    }
+  }
 }

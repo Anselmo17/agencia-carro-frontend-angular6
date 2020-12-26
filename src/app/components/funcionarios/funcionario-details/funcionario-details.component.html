@@ -8,7 +8,7 @@
           <label for="model">Nome Completo : </label>
           <input type="text" [(ngModel)]="funcionario.nome" id="model" name="model" #model="ngModel" required
             class="form-control" [ngClass]="{ 'is-invalid': f.submitted && model.invalid }"
-            placeholder="Digite o modelo" [disabled]="!editavel">
+            placeholder="Digite o nome" [disabled]="!editavel">
           <div *ngIf="f.submitted && model.invalid" class="invalid-feedback">
             <div *ngIf="model.errors.required">Modelo é obrigatório</div>
           </div>
@@ -17,7 +17,7 @@
         <div class="form-group">
           <label for="color">Função na empresa :</label>
           <input type="text" [(ngModel)]="funcionario.funcao" id="color" name="color" #color="ngModel" required
-            class="form-control" [ngClass]="{ 'is-invalid': f.submitted && color.invalid }" placeholder="Digite a cor"
+            class="form-control" [ngClass]="{ 'is-invalid': f.submitted && color.invalid }" placeholder="Digite o cargo"
             [disabled]="!editavel">
           <div *ngIf="f.submitted && color.invalid" class="invalid-feedback">
             <div *ngIf="color.errors.required">Cor é obrigatória</div>
@@ -26,9 +26,22 @@
 
         <div class="form-group">
           <label for="price">Salario atual : </label>
-          <input type="number" [(ngModel)]="funcionario.salary" id="price" name="price" #price="ngModel" required
+          <input type="text" [(ngModel)]="funcionario.salary" id="salary" name="salary" 
+          #price="ngModel" required
             class="form-control" [ngClass]="{ 'is-invalid': f.submitted && price.invalid }"
-            placeholder="Digite o preço"  [disabled]="!editavel">
+            placeholder="Digite o salario"  [disabled]="!editavel">
+          <div *ngIf="f.submitted && price.invalid" class="invalid-feedback">
+            <div *ngIf="price.errors.required">Preço é obrigatório</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="price">Data Nascimento : </label>
+          <input type="text" [(ngModel)]="funcionario.birthday" id="birthday" name="birthday" 
+          maxlength="8"
+          #birthday="ngModel" required
+          (keyup)="maskaraData()"
+            class="form-control" [ngClass]="{ 'is-invalid': f.submitted && birthday.invalid }"
+            placeholder="Digite a data nascimento"  [disabled]="!editavel">
           <div *ngIf="f.submitted && price.invalid" class="invalid-feedback">
             <div *ngIf="price.errors.required">Preço é obrigatório</div>
           </div>
