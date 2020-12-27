@@ -30,7 +30,7 @@ export class FuncionariosComponent implements OnInit {
   id: string;
   inscricaoId: Subscription;
   mensagem: string;
-  
+  isLoanding: boolean = false;
 
   constructor(private funcionarioService: FuncionarioService , private routerParams: ActivatedRoute) { }
 
@@ -49,8 +49,10 @@ ngOnDestroy() {
 
 // lista Funcionarios 
   getFuncionarios() {
+    this.isLoanding = true;
     this.funcionarioService.getAllProfiles().subscribe((funcionarios: Funcionario[]) => {
-      this.funcionarios = funcionarios;
+        this.isLoanding = false;
+        this.funcionarios = funcionarios;
     })
   }
 
