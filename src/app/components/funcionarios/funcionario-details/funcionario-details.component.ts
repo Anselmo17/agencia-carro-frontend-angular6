@@ -62,12 +62,11 @@ export class FuncionarioDetailsComponent implements OnInit {
   }
 
   // filtra pelo id 
-  this.funcionarioService.getFuncionarioById(this.id).subscribe((funcionario: Funcionario) => {
-    this.funcionario = funcionario;
-      this.isLoanding = false;
+    this.funcionarioService.getFuncionarioById(this.id).subscribe((funcionario: Funcionario) => {
+        this.funcionario = funcionario;
+        this.isLoanding = false;
+    });
   });
-
-});
   }
 
   // Chama o serviço para obter todos os carros
