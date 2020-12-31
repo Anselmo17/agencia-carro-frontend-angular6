@@ -23,6 +23,8 @@ export class FuncionarioDetailsComponent implements OnInit {
   inscricaoId: Subscription;
   editavel: boolean = false;
   enable:boolean= false;
+  isLoanding = false;
+
 
   //tipo funcionario
   funcionario = {} as Funcionario;
@@ -37,36 +39,35 @@ export class FuncionarioDetailsComponent implements OnInit {
 
 
   ngOnInit() {
-
-    // busca todos os funcionarios 
-    this.getFuncionarios();
-    
-
-    // busca o dados e devolve na tela 
-    this.inscricaoId = this.routerParams.params.subscribe((params: any) => {
-      this.id = params['id'];
-      this.editavel = params['editar'] === "true" ? true : false;
-
-
-      // todo loading
-      if(this.editavel){
-        this.title = "Editar os dados";
-        this.enable = true;
-      }else{
-        this.enable = false;
-      }
-
-      // filtra pelo id 
-      this.funcionarioService.getFuncionarioById(this.id).subscribe((funcionario: Funcionario) => {
-        this.funcionario = funcionario;
-      });
-
-    });
-
+   this.getFuncionarioId();
   }
 
-  ngOnDestroy() {
-    this.inscricaoId.unsubscribe();
+  // Busca funcionario por Id
+  getFuncionarioId(){
+
+ // busca o dados e devolve na tela 
+ this.inscricaoId = this.routerParams.params.subscribe((params: any) => {
+  
+  this.isLoanding = true;
+  this.id = params['id'];
+  this.editavel = params['editar'] === "true" ? true : false;
+
+
+  // todo loading
+  if(this.editavel){
+    this.title = "Editar os dados";
+    this.enable = true;
+  }else{
+    this.enable = false;
+  }
+
+  // filtra pelo id 
+  this.funcionarioService.getFuncionarioById(this.id).subscribe((funcionario: Funcionario) => {
+    this.funcionario = funcionario;
+      this.isLoanding = false;
+  });
+
+});
   }
 
   // Chama o serviço para obter todos os carros
@@ -105,4 +106,9 @@ export class FuncionarioDetailsComponent implements OnInit {
       this.funcionario.birthday = dataFormatada;
     }
   }
+
+  ngOnDestroy() {
+    this.inscricaoId.unsubscribe();
+  }
+
 }

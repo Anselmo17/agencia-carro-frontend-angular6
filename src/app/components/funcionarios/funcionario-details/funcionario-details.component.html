@@ -2,7 +2,7 @@
   <!-- FORMULARIO DE CADASTRO PARA DETAILS -->
   <div class="card add-car">
     <h5 class="card-header">{{title}}</h5>
-    <div class="card-body">
+    <div class="card-body" *ngIf="!isLoanding">
       <form id="add-form" (ngSubmit)="f.form.valid" #f="ngForm" novalidate>
         <div class="form-group">
           <label for="model">Nome Completo : </label>
@@ -49,6 +49,9 @@
         <button *ngIf="enable" type="submit" class="btn btn-primary btn-add-car" [disabled]="!enable" (click)="editFuncionario(this.funcionario)">Salvar</button>
         <button class="btn btn-secondary ml-1 btn-add-car" routerLink="/funcionarios" >Voltar</button>
       </form>
+    
     </div> 
-
+    <div *ngIf="isLoanding">
+      <app-loading class="spinnerTable"></app-loading>
+    </div>
 </div>
