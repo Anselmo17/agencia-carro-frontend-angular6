@@ -11,3 +11,12 @@
 .spinnerTable{
   margin-left: 380px;
 }
+
+.notData{
+  text-align: center;
+  font-size: 1em;
+  width: 100%;
+  font-weight: bold;
+  justify-items: center;
+  align-items: center;
+}

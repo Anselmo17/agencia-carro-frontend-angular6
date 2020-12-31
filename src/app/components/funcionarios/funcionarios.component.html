@@ -14,32 +14,32 @@
             <th scope="col">Ação</th>
           </tr>
         </thead>
-        <tbody class="container" *ngIf="isLoanding">
-                <app-loading class="spinnerTable"></app-loading>
+        <tbody *ngIf="isLoanding">
+            <app-loading class="spinnerTable"></app-loading>
         </tbody>
-    
-        <tbody *ngIf="funcionario && !isLoanding">
-          <tr *ngFor="let funcionario of funcionarios">
-            <td>{{funcionario.id}}</td>
-            <td>{{funcionario.nome}}</td>
-            <td>{{funcionario.funcao | uppercase}}</td>
-            <td>{{funcionario.salary | currency:"BRL": true }}</td>
-            <td>{{funcionario.birthday | date:"dd/MM/yyyy" }}</td>
-            <td>
-              <button type="button" class="btn btn-info btn-sm"
-              [routerLink]="['details', funcionario.id, false]" >Detalhes</button>
-              <button type="button" class="btn btn-warning btn-sm ml-1"
-                [routerLink]="['editar', funcionario.id, true]" >Editar</button>
-              <button type="button" class="btn btn-danger btn-sm ml-1" 
-                (click)="deleteFuncionario(funcionario)" >Deletar</button> 
-            </td>
-          </tr>
-        </tbody>
-
-        <ng-template class="notData" #Msg>
-          Nao tem dados para ser apresentando
-        </ng-template>
+      
+      <tbody *ngIf="funcionario && !isLoanding">
+        <tr *ngFor="let funcionario of funcionarios">
+          <td>{{funcionario.id}}</td>
+          <td>{{funcionario.nome}}</td>
+          <td>{{funcionario.funcao | uppercase}}</td>
+          <td>{{funcionario.salary | currency:"BRL": true }}</td>
+          <td>{{funcionario.birthday | date:"dd/MM/yyyy" }}</td>
+          <td>
+            <button type="button" class="btn btn-info btn-sm"
+            [routerLink]="['details', funcionario.id, false]" >Detalhes</button>
+            <button type="button" class="btn btn-warning btn-sm ml-1"
+              [routerLink]="['editar', funcionario.id, true]" >Editar</button>
+            <button type="button" class="btn btn-danger btn-sm ml-1" 
+              (click)="deleteFuncionario(funcionario)" >Deletar</button> 
+          </td>
+        </tr>
+      </tbody>
       </table>
+
+      <div class="notData" *ngIf="funcionarios.length === 0">
+        <span>Nao tem dados para ser apresentando...</span>
+      </div>
     </div>
   </div>
 

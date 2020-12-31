@@ -22,7 +22,7 @@ export class FuncionariosComponent implements OnInit {
 
   
   funcionario = {} as Funcionario;
-  funcionarios: Funcionario[];
+  funcionarios: Funcionario[] = [];
 
   title = 'Funcionários';
   subTitle = 'Gerenciamento de Funcionários';
@@ -53,7 +53,7 @@ ngOnDestroy() {
     this.funcionarioService.getAllProfiles().subscribe((funcionarios: Funcionario[]) => {
         this.isLoanding = false;
         this.funcionarios = funcionarios;
-    })
+    });
   }
 
 // Cadastra Funcionario 
