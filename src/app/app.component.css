@@ -14,10 +14,22 @@
   margin-right: 10px;
 }
 
-.tableCar{
+.tableCar {
   color: white;
 }
 
-.notData{
+.notData {
   text-align: center;
+}
+
+footer {
+  padding: 15px;
+  background-color: black;
+  color: white;
+  margin-bottom: 0px;
+}
+
+footer p {
+  text-align: center;
+  font-size: .9rem;
 }

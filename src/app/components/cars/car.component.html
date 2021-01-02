@@ -1,49 +1,45 @@
 <!-- TABELA -->
-<div class="container">
-  <div class="card list-car">
-    <h5 class="card-header">{{subTitle}}</h5>
-    <div class="card-body">
-      <table class="table">
-        <thead class="bg-dark tableCar">
-          <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Modelo</th>
-            <th scope="col">Cor</th>
-            <th scope="col">Preço</th>
-            <th scope="col">Ações</th>
-          </tr>
-        </thead>
-
-        <tbody *ngIf="cars; else Msg">
-          <tr *ngFor="let car of cars">
-            <td>{{car.id}}</td>
-            <td>{{car.model}}</td>
-            <td>{{car.color}}</td>
-            <td>{{car.price | currency}}</td>
-            <td>
-              <button type="button" class="btn btn-warning btn-sm" 
-                [routerLink]="['details', car.id]">Editar</button>
-              <button type="button" class="btn btn-danger btn-sm ml-1" (click)="deleteCar(car)">Deletar</button>
-            </td>
-          </tr>
-        </tbody>
-
-        <ng-template class="notData" #Msg>
-          Nao tem dados para ser apresentando
-        </ng-template>
-      </table>
+<div class="jumbotron">
+  <div class="container">
+    <div class="card list-car">
+      <h5 class="card-header">{{subTitle}}</h5>
+      <div class="card-body">
+        <table class="table">
+          <thead class="bg-dark tableCar">
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Modelo</th>
+              <th scope="col">Cor</th>
+              <th scope="col">Preço</th>
+              <th scope="col">Ações</th>
+            </tr>
+          </thead>
+  
+          <tbody *ngIf="cars; else Msg">
+            <tr *ngFor="let car of cars">
+              <td>{{car.id}}</td>
+              <td>{{car.model}}</td>
+              <td>{{car.color}}</td>
+              <td>{{car.price | currency}}</td>
+              <td>
+                <button type="button" class="btn btn-warning btn-sm" 
+                  [routerLink]="['details', car.id]">Editar</button>
+                <button type="button" class="btn btn-danger btn-sm ml-1" (click)="deleteCar(car)">Deletar</button>
+              </td>
+            </tr>
+          </tbody>
+  
+          <ng-template class="notData" #Msg>
+            Nao tem dados para ser apresentando
+          </ng-template>
+        </table>
+      </div>
+    </div>
+  
+    <div class="container bg-dark">
+      <div class="card-body">
+        <a class="nav-link" class="btn btn-primary" [routerLink]="['cadastrar']">Cadastrar</a>
+      </div>
     </div>
   </div>
-
-  <div class="container bg-dark">
-    <div class="card-body">
-      <a class="nav-link" class="btn btn-primary" [routerLink]="['cadastrar']">Cadastrar</a>
-    </div>
-  </div>
-
 </div>
-
-<!-- 
-<div class="container">
-  <router-outlet></router-outlet>
-</div> -->
