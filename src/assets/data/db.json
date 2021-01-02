@@ -33,20 +33,6 @@
   ],
   "profiles": [
     {
-      "id": 2,
-      "nome": "Maria Silva Nunes",
-      "funcao": "Gerente",
-      "birthday": "2014-01-01",
-      "salary": 3000
-    },
-    {
-      "id": 3,
-      "nome": "Marciano Caldeira Lima",
-      "funcao": "Ajudante",
-      "birthday": "1999-07-26",
-      "salary": 2400
-    },
-    {
       "nome": "Claudio Monteiro Lima",
       "funcao": "Desenvolvedor",
       "salary": 4500,

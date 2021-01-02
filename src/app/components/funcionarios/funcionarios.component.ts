@@ -31,6 +31,7 @@ export class FuncionariosComponent implements OnInit {
   inscricaoId: Subscription;
   mensagem: string;
   isLoanding: boolean = false;
+  showMessage: string  = '';
 
   constructor(private funcionarioService: FuncionarioService , private routerParams: ActivatedRoute) { }
 
@@ -86,7 +87,10 @@ saveFuncionario(form: NgForm) {
 
    // deleta um carro
    deleteFuncionario(funcionario: Funcionario) {
+     this.isLoanding = true;
     this.funcionarioService.deleteFuncionario(funcionario).subscribe(() => {
+      this.isLoanding = false;
+      this.showMessage = 'Deletado com sucesso !!!';
       this.getFuncionarios();
     });
   }
