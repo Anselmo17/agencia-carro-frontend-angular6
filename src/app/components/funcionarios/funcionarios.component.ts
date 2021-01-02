@@ -57,7 +57,7 @@ ngOnDestroy() {
   }
 
 // Cadastra Funcionario 
-saveCar(form: NgForm) {
+saveFuncionario(form: NgForm) {
 
   // defini se um carro será criado ou atualizado
       if (this.funcionario.id !== undefined) {
@@ -89,21 +89,6 @@ saveCar(form: NgForm) {
     this.funcionarioService.deleteFuncionario(funcionario).subscribe(() => {
       this.getFuncionarios();
     });
-  }
-
-  // maskara de datas
-  maskaraData(){
-    const data = this.funcionario.birthday;
-    // yy/yy/yyyy
-    let dia,mes,ano;
-    if (data.length === 8) {
-      dia = data.substring(0, 2);
-      mes = data.substring(2, 4);
-      ano = data.substring(4, 8);
-      
-    const dataFormatada = `${dia}/${mes}/${ano}`;
-      this.funcionario.birthday = dataFormatada;
-    }
   }
 
   // limpa o formulario

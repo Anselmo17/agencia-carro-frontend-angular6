@@ -41,7 +41,6 @@
             <input type="date" [(ngModel)]="funcionario.birthday" id="birthday" name="birthday" 
             maxlength="8"
             #birthday="ngModel" required
-            (keyup)="maskaraData()"
               class="form-control" [ngClass]="{ 'is-invalid': f.submitted && birthday.invalid }"
               placeholder="Digite a data nascimento"  [disabled]="!editavel">
             <div *ngIf="f.submitted && price.invalid" class="invalid-feedback">

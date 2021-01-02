@@ -2,6 +2,6 @@ export interface Funcionario {
   id: number;
   nome: string;
   funcao: string;
-  birthday: string;
+  birthday: Date;
   salary: number;
 }

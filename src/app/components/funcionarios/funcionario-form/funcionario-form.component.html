@@ -1,11 +1,18 @@
 <!-- MENSAGEM DE CADASTRO -->
-<div class = "container col-sm-6" > <div class="alert alert-success text-center col-sm-12" role="alert" *ngIf="mensagem"> {{mensagem}} < /div>
+<div class = "container col-sm-6" > 
+  <div class="alert alert-success text-center col-sm-12" role="alert" *ngIf="mensagem">
+     {{mensagem}}
+  </div>
 </div >
 
 
 <!-- FORMULARIO DE CADASTRO -->
 <div class="jumbotron">
-  <div class="card add-car">
+  <div *ngIf="isLoading">
+    <app-loading class="spinnerTable"></app-loading>
+  </div>
+
+  <div class="card add-car" *ngIf="!isLoading">
     <h5 class="card-header">Adicionar funcionários</h5>
     <div class="card-body">
       <form id="add-form" (ngSubmit)="f.form.valid && saveFuncionario(f)" #f="ngForm" novalidate>
@@ -20,7 +27,7 @@
             <label for="color">Cargo do Funcionário :</label>
             <input type="text" [(ngModel)]="funcionario.funcao" id="color" name="color" #color="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && color.invalid }" placeholder="Digite o cargo">
               <div *ngIf="f.submitted && color.invalid" class="invalid-feedback">
-                <div *ngIf="color.errors.required">Cor é obrigatória</div>
+                <div *ngIf="color.errors.required">Cargo é obrigatória</div>
               </div>
             </div>
             <div class="form-group">
@@ -28,14 +35,14 @@
               </label>
               <input type="number" [(ngModel)]="funcionario.salary" id="price" name="price" #price="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && price.invalid }" placeholder="Digite o salario">
                 <div *ngIf="f.submitted && price.invalid" class="invalid-feedback">
-                  <div *ngIf="price.errors.required">Preço é obrigatório</div>
+                  <div *ngIf="price.errors.required">Salário é obrigatório</div>
                 </div>
               </div>
               <div class="form-group">
                 <label for="birthday">Data Aniversário :
                 </label>
-                <input type="date" [(ngModel)]="funcionario.birthday" id="birthday" name="birthday" (keyup)="maskaraData()" 
-                   #birthday="ngModel" required maxlength="8" class="form-control" [ngClass]="{ 'is-invalid': f.submitted && birthday.invalid }" placeholder="Digite data Nascimento">
+                <input type="date" [(ngModel)]="funcionario.birthday" id="birthday" name="birthday" 
+                   #birthday="ngModel" required  class="form-control" [ngClass]="{ 'is-invalid': f.submitted && birthday.invalid }" placeholder="Digite data Nascimento">
                   <div *ngIf="f.submitted && birthday.invalid" class="invalid-feedback">
                     <div *ngIf="birthday.errors.required">Data Nascimento é obrigatório</div>
                   </div>
@@ -45,5 +52,5 @@
                 <button type="button" class="btn btn-dark btn-add-car ml-1" [routerLink]="['/funcionarios']">Voltar</button>
               </form>
             </div>
-          </div>  
-</div> 
+  </div>  
+ 

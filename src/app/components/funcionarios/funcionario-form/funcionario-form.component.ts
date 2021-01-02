@@ -15,6 +15,7 @@ export class FuncionarioFormComponent implements OnInit {
 
 // variaveis global
   mensagem: string;
+ isLoading: boolean = false;
 
  //tipo funcionario
  funcionario = {} as Funcionario;
@@ -36,13 +37,16 @@ export class FuncionarioFormComponent implements OnInit {
 
   saveFuncionario(form: NgForm) {
 
+    this.isLoading = true;
     // defini se um carro será criado ou atualizado
         if (this.funcionario.id !== undefined) {
           this.funcionarioService.updateFuncionario(this.funcionario).subscribe(() => {
+            this.isLoading = false;
             this.cleanForm(form);
           });
         } else {
           this.funcionarioService.saveFuncionario(this.funcionario).subscribe(() => {
+            this.isLoading = false;
             this.mensagem = "Cadastro com sucesso !!!"
             this.cleanForm(form);
     
@@ -54,19 +58,6 @@ export class FuncionarioFormComponent implements OnInit {
         }
       }
 
-      maskaraData(){
-        const data = this.funcionario.birthday;
-        // yy/yy/yyyy
-        let dia,mes,ano;
-        if (data.length === 8) {
-          dia = data.substring(0, 2);
-          mes = data.substring(2, 4);
-          ano = data.substring(4, 8);
-          
-        const dataFormatada = `${dia}/${mes}/${ano}`;
-          this.funcionario.birthday = dataFormatada;
-        }
-      }
   // limpa o formulario
   cleanForm(form: NgForm) {
     this.getFuncionarios();
