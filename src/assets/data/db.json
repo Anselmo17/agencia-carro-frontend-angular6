@@ -40,20 +40,6 @@
       "birthday": "12/03/1986"
     },
     {
-      "birthday": "2007-06-02",
-      "salary": 1500,
-      "funcao": "Desenvolvedor",
-      "nome": "Jenivaldo Antonio",
-      "id": 5
-    },
-    {
-      "birthday": "1986-01-02",
-      "salary": 3400,
-      "funcao": "Tech Lider",
-      "nome": "Andressa Soares",
-      "id": 6
-    },
-    {
       "birthday": "1990-03-20",
       "salary": 2500,
       "funcao": "RH",
