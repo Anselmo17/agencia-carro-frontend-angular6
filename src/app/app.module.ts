@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
 
 
 // components
-import { LoadingComponent } from './shared/loading/loading.component';
+import { LoadingComponent } from './shared/componentes/loading/loading.component';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';

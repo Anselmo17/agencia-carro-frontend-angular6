@@ -47,7 +47,6 @@ export class FuncionarioDetailsComponent implements OnInit {
 
  // busca o dados e devolve na tela 
  this.inscricaoId = this.routerParams.params.subscribe((params: any) => {
-  
   this.isLoanding = true;
   this.id = params['id'];
   this.editavel = params['editar'] === "true" ? true : false;
