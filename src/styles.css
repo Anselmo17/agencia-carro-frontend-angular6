@@ -1,12 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-
 body {
   background-image: url('./assets/img/fundo-site.jpg');
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-
-
 .jumbotron {
-
   box-shadow: rgb(58, 59, 57) 15px 15px 18px !important;
 }

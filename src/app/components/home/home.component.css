@@ -2,10 +2,22 @@
   border: 2px solid black;
 }
 
-.imgCard{
+.imgCard {
   margin-top: 0.5rem;
 }
 
 .add-car {
   margin-bottom: .5px;
+}
+
+.title {
+  text-align: center;
+  width: 50%;
+  color: white;
+  opacity: .9;
+  border:none;
+  border-bottom: 2px;
+  border-radius: 10px;
+  font-weight: 800;
+  margin: 10px auto;
 }
