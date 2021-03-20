@@ -9,7 +9,7 @@ import { FuncionariosRoutingModule } from './funcionarios.routing.module';
 import { FuncionariosComponent } from '../funcionarios/funcionarios.component';
 import {FuncionarioFormComponent} from './funcionario-form/funcionario-form.component';
 import {FuncionarioDetailsComponent } from './funcionario-details/funcionario-details.component';
-import { LoadingComponent } from '../../shared/loading/loading.component';
+import { LoadingComponent } from '../../shared/componentes/loading/loading.component';
 
 // services
 import { FuncionarioService } from '../../services/funcionario.service';
