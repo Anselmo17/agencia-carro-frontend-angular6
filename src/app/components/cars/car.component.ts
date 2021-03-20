@@ -10,15 +10,16 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./car.component.css']
 })
 export class CarComponent implements OnInit {
-  
+
   car = {} as Car;
-  cars: Car[];
+  cars: Car[] = [];
+  isLoanding = false;
 
   title = 'Agencia Carros';
   subTitle = 'Gerenciamento de Carros';
 
-  constructor(private carService: CarService) {}
-  
+  constructor(private carService: CarService) { }
+
   ngOnInit() {
     this.getCars();
   }
@@ -38,9 +39,15 @@ export class CarComponent implements OnInit {
 
   // Chama o serviço para obter todos os carros
   getCars() {
+    this.isLoanding = true;
     this.carService.getCars().subscribe((cars: Car[]) => {
+      this.isLoanding = false;
       this.cars = cars;
-    });
+    },
+      error => {
+        this.isLoanding = false;
+        console.log(error);
+      });
   }
 
   // deleta um carro

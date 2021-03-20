@@ -28,7 +28,6 @@ import { FuncionarioService } from '../../services/funcionario.service';
     FuncionariosComponent,
     FuncionarioFormComponent,
     FuncionarioDetailsComponent,
-    LoadingComponent
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [

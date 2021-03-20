@@ -14,10 +14,15 @@
   margin-right: 10px;
 }
 
-.tableCar{
+.tableCar {
   color: white;
 }
 
-.notData{
+.notData {
+  text-align: center;
+  font-weight: 600;
+}
+
+.card-header {
   text-align: center;
 }

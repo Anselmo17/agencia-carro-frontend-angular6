@@ -14,8 +14,11 @@
               <th scope="col">Ações</th>
             </tr>
           </thead>
-  
-          <tbody *ngIf="cars; else Msg">
+          
+          <tbody *ngIf="isLoanding">
+              <app-loading class="spinnerTable"></app-loading>
+          </tbody>
+          <tbody *ngIf="cars">
             <tr *ngFor="let car of cars">
               <td>{{car.id}}</td>
               <td>{{car.model}}</td>
@@ -28,11 +31,12 @@
               </td>
             </tr>
           </tbody>
-  
-          <ng-template class="notData" #Msg>
-            Nao tem dados para ser apresentando
-          </ng-template>
         </table>
+        <div class="notData" *ngIf="cars.length === 0">
+            <span>
+                  Não tem dados para ser apresentando.
+            </span>
+        </div>
       </div>
     </div>
   

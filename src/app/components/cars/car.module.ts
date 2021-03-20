@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 //routers
 import { CarRoutingModule } from './car.routing.module';
@@ -12,6 +12,7 @@ import { CarDetailsComponent } from './car-details/car-details.component';
 
 // services
 import { CarService } from '../../services/car.service';
+import { LoadingComponent } from 'src/app/shared/componentes/loading/loading.component';
 
 
 // aplicacao do modulo 
@@ -22,12 +23,16 @@ import { CarService } from '../../services/car.service';
     CarRoutingModule
 
   ],
-  exports: [],
+  exports: [
+    LoadingComponent
+  ],
   declarations: [
     CarComponent,
     CarFormComponent,
-    CarDetailsComponent
+    CarDetailsComponent,
+    LoadingComponent
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     CarService
   ]
