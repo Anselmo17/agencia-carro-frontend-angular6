@@ -4,6 +4,14 @@
   height: 80vh;
 }
 
+/* menu */
+a.nav-link:hover {
+  cursor: pointer !important;
+  border: none;
+  border-bottom: white 2px solid;
+  color: white !important;
+}
+
 .add-car {
   margin-bottom: 30px;
 }
