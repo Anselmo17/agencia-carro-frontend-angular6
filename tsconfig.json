@@ -5,6 +5,11 @@
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
+    "paths": {
+      "exceljs": [
+        "node_modules/exceljs/dist/exceljs.min"
+      ]
+    },
     "module": "es2015",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
