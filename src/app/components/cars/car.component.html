@@ -42,7 +42,8 @@
   
     <div class="container bg-dark">
       <div class="card-body">
-        <a class="nav-link" class="btn btn-primary" [routerLink]="['cadastrar']">Cadastrar</a>
+        <a class="nav-link" class="btn btn-primary mr-1" [routerLink]="['cadastrar']">Cadastrar</a>
+         <a class="nav-link" class="btn btn-outline-primary" (click)="exportarExcel()" >Exportar</a>
       </div>
     </div>
   </div>
