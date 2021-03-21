@@ -15,8 +15,6 @@ export class ExportarExcelService {
     const title = 'Carros';
     const header = ['Id', 'Modelo', 'Cor', 'Preço'];
 
-    console.log(dados);
-
     // criar folha 
     let workbook = new Workbook();
     let worksheet = workbook.addWorksheet(`${titleFolha}`);
@@ -24,15 +22,17 @@ export class ExportarExcelService {
     // Add new row
     let titleRow = worksheet.addRow([titleFolha]);
 
-    //Formata o titulo da linha 
-    titleRow.font = { name: 'Comic Sans MS', family: 4, size: 16, underline: 'double', bold: true };
-    // Blank Row
+    //Formata o titulo da linha Comic Sans MS 
+    titleRow.font = { name: 'Comic Sans MS', family: 10, size: 12, bold: true };
+
+    // pula 1 linha
     worksheet.addRow([]);
+
     //Adiciona data atual da geracao
-    let subTitleRow = worksheet.addRow(['Date : ' + new Date().toDateString()]);
+    const date = new Date().toISOString().substring(0, 10);
+    worksheet.addRow(['Date : ' + date]);
 
     // adiciona os headers 
-    //Add Header Row
     let headerRow = worksheet.addRow(header);
 
     // Formata os Headers
@@ -42,8 +42,12 @@ export class ExportarExcelService {
         pattern: 'solid',
         fgColor: { argb: 'FFFFFF00' },
         bgColor: { argb: 'FF0000FF' }
-      }
-      cell.border = { top: { style: 'thin' }, left: { style: 'thin' }, bottom: { style: 'thin' }, right: { style: 'thin' } }
+      };
+      cell.alignment = { horizontal: 'justify' };
+      cell.border = {
+        top: { style: 'thin' }, left: { style: 'thin' },
+        bottom: { style: 'thin' }, right: { style: 'thin' }
+      };
     });
 
     // adiciona os itens da lista
@@ -52,7 +56,10 @@ export class ExportarExcelService {
       worksheet.addRows([line]);
     });
 
-    //gera o buffer excel no navegador cliente
+    // formata altura das celulas do documento inteiro
+    worksheet.properties.defaultRowHeight = 30;
+
+    //gera o buffer excel no navegador do cliente
     workbook.xlsx.writeBuffer().then((items) => {
       const a = items.toString();
       let blob = new Blob([items],
