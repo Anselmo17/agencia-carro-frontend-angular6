@@ -61,7 +61,6 @@ export class ExportarExcelService {
 
     //gera o buffer excel no navegador do cliente
     workbook.xlsx.writeBuffer().then((items) => {
-      const a = items.toString();
       let blob = new Blob([items],
         { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
       fs.saveAs(blob, `${titleFolha}.xlsx`);
