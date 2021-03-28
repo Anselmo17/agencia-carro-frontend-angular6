@@ -40,7 +40,7 @@ export class ExportarExcelService {
       cell.fill = {
         type: 'pattern',
         pattern: 'solid',
-        fgColor: { argb: 'FFFFFF00' },
+        fgColor: { argb: '87CEFA' },
         bgColor: { argb: 'FF0000FF' }
       };
       cell.alignment = { horizontal: 'justify' };
@@ -50,6 +50,7 @@ export class ExportarExcelService {
       };
     });
 
+    worksheet.getColumn(1).width = 12;
     // adiciona os itens da lista
     dados.forEach(item => {
       const line = [item.id, item.model, item.color, item.price];
@@ -58,11 +59,11 @@ export class ExportarExcelService {
 
     // formata altura das celulas do documento inteiro
     worksheet.properties.defaultRowHeight = 30;
-
+    worksheet.autoFilter 
     //gera o buffer excel no navegador do cliente
     workbook.xlsx.writeBuffer().then((items) => {
       let blob = new Blob([items],
-        { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+        { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8;' });
       fs.saveAs(blob, `${titleFolha}.xlsx`);
     }).catch((error) => {
       throw error;
