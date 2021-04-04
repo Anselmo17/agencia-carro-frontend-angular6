@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { CarService } from '../../services/car.service';
+import { ExportarExcelService } from '../../shared/service/exportar-excel.service';
 import { Car } from '../../models/car';
 import { NgForm } from '@angular/forms';
 
@@ -18,7 +19,10 @@ export class CarComponent implements OnInit {
   title = 'Agencia Carros';
   subTitle = 'Gerenciamento de Carros';
 
-  constructor(private carService: CarService) { }
+  constructor(
+    private carService: CarService,
+    private exportService: ExportarExcelService
+  ) { }
 
   ngOnInit() {
     this.getCars();
@@ -55,6 +59,15 @@ export class CarComponent implements OnInit {
     this.carService.deleteCar(car).subscribe(() => {
       this.getCars();
     });
+  }
+
+  // exporta 
+  exportarExcel() {
+    try {
+      this.exportService.generateExcel(this.cars, this.subTitle)
+    } catch (error) {
+      console.log('Houve erro ---------------- ', error);
+    };
   }
 
   // limpa o formulario

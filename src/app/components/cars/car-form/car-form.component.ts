@@ -8,7 +8,7 @@ import { Car } from '../../../models/car';
 
 // commons
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 //import { Subscription } from 'rxjs/Rx';
 import { Subscription } from 'rxjs';
 
@@ -27,12 +27,15 @@ export class CarFormComponent implements OnInit {
   id: string;
   inscricaoId: Subscription;
 
-  constructor(private carService: CarService, private routerParams: ActivatedRoute) { }
+  constructor(
+    private carService: CarService,
+    private routerParams: ActivatedRoute,
+    private router: Router) { }
 
   // quando o component inicia
   ngOnInit() {
     this.getCars();
-  
+
     this.inscricaoId = this.routerParams.params.subscribe((params: any) => {
       this.id = params['id'];
     });
@@ -46,18 +49,18 @@ export class CarFormComponent implements OnInit {
 
   saveCar(form: NgForm) {
 
-// defini se um carro será criado ou atualizado
+    // defini se um carro será criado ou atualizado
     if (this.car.id !== undefined) {
       this.carService.updateCar(this.car).subscribe(() => {
         this.cleanForm(form);
       });
     } else {
       this.carService.saveCar(this.car).subscribe(() => {
-        this.mensagem = "Cadastro com sucesso !!!"
-        this.cleanForm(form);
-
+        this.mensagem = "Cadastro com sucesso !!!";
+        this.router.navigate(['/cars']);
         // limpa msg sucesso
         setTimeout(() => {
+          this.cleanForm(form);
           this.mensagem = undefined;
         }, 3000)
       });

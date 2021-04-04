@@ -26,3 +26,7 @@
 .card-header {
   text-align: center;
 }
+
+.btn-outline-primary {
+  color: white !important;
+}

@@ -14,6 +14,7 @@ import { CarDetailsComponent } from './car-details/car-details.component';
 import { CarService } from '../../services/car.service';
 import { LoadingComponent } from 'src/app/shared/componentes/loading/loading.component';
 import { NgxMaskModule } from 'ngx-mask';
+import { ExportarExcelService } from 'src/app/shared/service/exportar-excel.service';
 
 
 // aplicacao do modulo 
@@ -36,7 +37,8 @@ import { NgxMaskModule } from 'ngx-mask';
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
-    CarService
+    CarService,
+    ExportarExcelService
   ]
 })
 
