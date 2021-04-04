@@ -23,7 +23,7 @@
               <td>{{car.id}}</td>
               <td>{{car.model}}</td>
               <td>{{car.color}}</td>
-              <td>{{car.price | currency:'BRL':true}}</td>
+              <td>{{car.price | currency:'BRL'}}</td>
               <td>
                 <button type="button" class="btn btn-warning btn-sm" [routerLink]="['details', car.id]">Editar</button>
                 <button type="button" class="btn btn-danger btn-sm ml-1" (click)="deleteCar(car)">Deletar</button>
