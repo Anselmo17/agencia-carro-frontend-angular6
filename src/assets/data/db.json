@@ -29,6 +29,12 @@
       "color": "vinho",
       "price": 13000,
       "id": 7
+    },
+    {
+      "model": "mustangui",
+      "color": "preto",
+      "price": "20000",
+      "id": 8
     }
   ],
   "profiles": [

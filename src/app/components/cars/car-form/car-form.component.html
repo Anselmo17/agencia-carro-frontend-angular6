@@ -35,8 +35,7 @@
               type="text" [(ngModel)]="car.price" id="price" 
               name="price" #price="ngModel" required
               class="form-control" [ngClass]="{ 'is-invalid': f.submitted && price.invalid }"
-              placeholder="Digite o preço" prefix="$" 
-               mask="dot_separator" separatorLimit="1000"
+              placeholder="Digite o preço" mask="dot_separator" separatorLimit="1000"
                maxlength="13"
              />
           <div *ngIf="f.submitted && price.invalid" class="invalid-feedback">
