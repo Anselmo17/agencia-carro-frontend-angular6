@@ -9,6 +9,10 @@ import { FuncionarioModule } from './components/funcionarios/funcionarios.module
 // commons
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { LOCALE_ID } from '@angular/core';// IMPORTANT
+import { registerLocaleData } from '@angular/common';// IMPORTANT
+import localePt from '@angular/common/locales/pt';// IMPORTANT
+registerLocaleData(localePt); // IMPORTANT
 
 // components
 import { AppComponent } from './app.component';
@@ -34,6 +38,10 @@ import { CommonModule } from '@angular/common';
   exports: [
   ],
   providers: [
+  {
+    provide: LOCALE_ID, 
+    useValue: "pt-BR"
+  }
   ],
   bootstrap: [
     AppComponent,
