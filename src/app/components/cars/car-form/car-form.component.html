@@ -15,7 +15,8 @@
         <div class="form-group">
           <label for="model">Modelo</label>
           <input type="text" [(ngModel)]="car.model" id="model" name="model" #model="ngModel" required
-            class="form-control" [ngClass]="{ 'is-invalid': f.submitted && model.invalid }" placeholder="Digite o modelo">
+            class="form-control" [ngClass]="{ 'is-invalid': f.submitted && model.invalid }"
+            placeholder="Digite o modelo">
           <div *ngIf="f.submitted && model.invalid" class="invalid-feedback">
             <div *ngIf="model.errors.required">Modelo é obrigatório</div>
           </div>
@@ -30,8 +31,14 @@
         </div>
         <div class="form-group">
           <label for="price">Preço</label>
-          <input type="number" [(ngModel)]="car.price" id="price" name="price" #price="ngModel" required
-            class="form-control" [ngClass]="{ 'is-invalid': f.submitted && price.invalid }" placeholder="Digite o preço">
+             <input 
+              type="text" [(ngModel)]="car.price" id="price" 
+              name="price" #price="ngModel" required
+              class="form-control" [ngClass]="{ 'is-invalid': f.submitted && price.invalid }"
+              placeholder="Digite o preço" prefix="$" 
+               mask="dot_separator" separatorLimit="1000"
+               maxlength="13"
+             />
           <div *ngIf="f.submitted && price.invalid" class="invalid-feedback">
             <div *ngIf="price.errors.required">Preço é obrigatório</div>
           </div>
@@ -40,6 +47,6 @@
         <button type="reset" class="btn btn-secondary btn-add-car ml-1" (click)="cleanForm(f)">Cancelar</button>
       </form>
     </div>
-  
+
   </div>
 </div>
