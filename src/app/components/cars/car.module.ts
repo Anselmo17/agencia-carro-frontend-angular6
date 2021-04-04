@@ -13,12 +13,14 @@ import { CarDetailsComponent } from './car-details/car-details.component';
 // services
 import { CarService } from '../../services/car.service';
 import { LoadingComponent } from 'src/app/shared/componentes/loading/loading.component';
+import { NgxMaskModule } from 'ngx-mask';
 import { ExportarExcelService } from 'src/app/shared/service/exportar-excel.service';
 
 
 // aplicacao do modulo 
 @NgModule({
   imports: [
+    NgxMaskModule.forRoot(),
     CommonModule,
     FormsModule,
     CarRoutingModule
